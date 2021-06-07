@@ -540,7 +540,12 @@ Often the error paths for files not being present are even buggy and
 will reveal programming errors like unbound local variables. Please look
 carefully at these exceptions keeping in mind that this can be the
 cause. If you program works without standalone, chances are data files
-might be cause.
+might be cause. For example, xmlschema package imports its data by system
+API instead of import directive. The final generated executable file 
+can't be launched if your script uses xmlschema package. The executable
+will complain that some data files can't be found. Such issue can be fixed
+by using option --include-package-data=xmlschema. Nuitka will explicity 
+import all xmlschema's data to final executable.
 
 Missing DLLs in standalone
 ==========================
