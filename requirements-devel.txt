@@ -44,5 +44,8 @@ pytest; python_version == '2.7' or python_version >= '3.4'
 # Onefile compression
 zstandard; python_version >= '3.5'
 
+# Plugins need that
+pyyaml==5.4.1; python_version == '2.7'
+
 # Packaging
 wheel
